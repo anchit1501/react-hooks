@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import uuid from 'uuid/v1';
 import NewSong from "./NewSong";
 const Songlist = () => {
@@ -10,6 +10,9 @@ const Songlist = () => {
   const addSong=(title)=>{
       setsong([...song,{title,id:uuid()}])
   }
+  useEffect(()=>{
+      console.log('useEffect ran')
+  },[song])
   return (
     <div className="song-list">
       <ul>
